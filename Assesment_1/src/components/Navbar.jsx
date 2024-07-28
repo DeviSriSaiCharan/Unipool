@@ -1,7 +1,20 @@
 import Logo_unipool from '../assets/Logo_unipool.png'
 import '../styles/Navbar.css'
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 export default function Navbar(){
+
+    gsap.registerPlugin(useGSAP)
+
+    useGSAP(() =>{
+        gsap.from('nav div img, nav div ul li, nav button',{
+            opacity : 0,
+            y : -20,
+            delay : 0.5,
+            stagger : 0.1
+        })
+    },[])
 
     return (
         <nav className='w-full h-[10%] px-20 border-b flex items-center justify-between'>
