@@ -1,0 +1,19 @@
+
+li a::after{
+    width: 0px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+    content: "";
+    left: 0px;
+    transition: width 0.3s ease-out;
+}
+
+li:hover a::after {
+    width: 100%; /* Full width on hover */
+}
+
+a{
+    @apply outline-none;
+}
